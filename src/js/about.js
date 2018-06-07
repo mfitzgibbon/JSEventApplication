@@ -7,7 +7,7 @@ export function initMap() {
   // experiment with the zoom value
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
-    center: {lat: 59.325, lng: 18.070}
+    center: {lat: 44.052071, lng: -123.086754}
   });
 
   // change the lat and lng to eugene
@@ -15,7 +15,7 @@ export function initMap() {
     map,
     draggable: true,
     animation: google.maps.Animation.DROP,
-    position: {lat: 59.325, lng: 18.070}
+    position: {lat: 44.052071, lng: -123.086754}
   });
 
   marker.addListener('click', () => {
