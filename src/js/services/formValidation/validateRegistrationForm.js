@@ -39,31 +39,39 @@ export default function validateRegistrationForm(formValues) {
 
 // must be longer than 3 chars.  Use a regular expression.
 function validateUserName(name) {
-  return true;
+  var NAME_REGEX = /^[a-zA-Z ]{3,30}$/
+  return NAME_REGEX.test(name);
 }
 
 // must be a valid email address.  Use a regular expression
 function validateEmail(email) {
-  true;
+  var EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return EMAIL_REGEX.test(email);
 }
 
 // must be a valid 10 digit phone number.  Use a regular expression
 function validatePhone(phone) {
-  return true;
+  var PHONE_REGEX = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
+  return PHONE_REGEX.test(phone);
 }
 
 // must be between 10 and 25 inclusive.  Use a regular expression
 // to make sure that the age is a 2 digit number before checking the range.
 function validateAge(age) {
-  return true;
+  var AGE_REGEX = /(1[0-9]|2[0-5])/
+  return AGE_REGEX.test(age);
 }
 
 // must be either school, college, trainee or employee.  No reg exp.
 function validateProfession(profession) {
-  return true;
+  if(profession == "school" || profession == "college" || profession == "trainee" || profession == "employee")
+    return true;
+  else
+    return false;
 }
 
 // must be between 0 and 4 years exclusive.  Use a regular expression.
 function validateExperience(experience) {
-  return true;
+  var EXPERIENCE_REGEX = /^([1-3])$/
+  return EXPERIENCE_REGEX.test(experience);
 }
