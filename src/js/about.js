@@ -24,7 +24,7 @@ export function initMap() {
 
   // put some useful info about the event here
   const infowindow = new google.maps.InfoWindow({
-      content: "<h3>Event Location</h3><p>Event Address with all the contact details</p>"
+      content: "<h3>Eugene, OR</h3><p>1911 Kincaid St. Be there, or be square.</p>"
   });
 
   infowindow.open(map,marker);
